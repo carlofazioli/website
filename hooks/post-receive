@@ -1,14 +1,15 @@
 #!/bin/bash
-PROJECT_PATH="/var/www/carlofazioli.com/html"
+WORK_TREE="/var/www/carlofazioli.com/html"
+GIT_DIR="/srv/git/website.git"
 while read oldrev newrev ref
 do
     if [[ $ref =~ .*/main$ ]];
     then
         echo "Main ref received.  Deploying main branch to production..."
-        git --work-tree=$PROJECT_PATH --git-dir=/srv/git/website checkout -f main
+        git --work-tree=$WORK_TREE --git-dir=$GIT_DIR checkout -f main
         echo "    ....done."
-        echo "Updating any hooks..."
-        cp $PROJECT_PATH/hooks/* /srv/git/website/hooks/
+        echo "Moving hooks..."
+        cp $WORK_TREE/hooks/* $GIT_DIR/hooks/
         echo "    ....done."
     else
         echo "Ref $ref successfully received."
