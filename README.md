@@ -4,6 +4,7 @@ This is my website repository while I learn HTML and CSS and whatever.
 
 ## Deployment Process
 
+*   Procure a domain name!
 *   Procure, e.g., a GCP compute instance.
 *   Follow a [webserver setup guide](https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-centos-7).
     *   Be sure to follow the VirtualHost setup section as well.
