@@ -4,7 +4,7 @@ do
     if [[ $ref =~ .*/main$ ]];
     then
         echo "Main ref received.  Deploying main branch to production..."
-        git --work-tree=/var/www/html --git-dir=/srv/git/website checkout -f main
+        git --work-tree=/var/www/carlofazioli.com/html --git-dir=/srv/git/website checkout -f main
         echo "    ....done."
         echo "Updating any hooks..."
         cp /var/www/html/hooks/* /srv/git/website/hooks/
