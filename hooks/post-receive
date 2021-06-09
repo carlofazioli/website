@@ -5,8 +5,10 @@ do
     then
         echo "Main ref received.  Deploying main branch to production..."
         git --work-tree=/var/www/html --git-dir=/srv/git/website checkout -f main
+        echo "    ....done."
         echo "Updating any hooks..."
         cp /var/www/html/hooks/* /srv/git/website/hooks/
+        echo "    ....done."
     else
         echo "Ref $ref successfully received."
         echo "Doing nothing: only the main branch may be deployed on this server."
