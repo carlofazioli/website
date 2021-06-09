@@ -1,2 +1,0 @@
-This file is just to test the post-receive hook.  If you see it, delete
-it!
